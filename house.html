@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+    .first{
+        margin-left:480px;
+        background-color:rgb(178, 166, 247);
+    }
+    input{
+        border-radius:5px;
+        padding:5px;
+        }
+        select{
+            border-radius:5px;
+            padding:5px;
+        }
+    td{
+        padding-bottom: 20px;
+        border-radius:5px;
+    }
+    .btn{
+            color:rgb(43, 230, 62);
+            border-radius:5px;
+        }
+       .btn2{
+             color:rgb(230, 36, 36);
+             border-radius:5px
+       }
+    </style>
+</head>
+<body class="mydiv">
+    
+    <h1 align = "center">HOUSE RENT CALCULATER</h1>
+    <fieldset style="width:300px"class="first">
+        <table>
+            <tr>
+        <td><label>Name</label></td>
+        <td><input type="text"></td>
+        </tr>
+        <td><label>City</label></td>
+        <td><select name="" id="cities">
+            <option>select</option>
+            <option>chennai</option>
+            <option>hyd</option>
+            </select></td></tr>
+            <tr>
+           <td><label>No.of bedrooms </label></td>
+           <td><select name="" id="beds">
+                <option>select</option>
+                <option value="1b">1bhk</option>
+                <option value="2b">2bhk</option>
+                </select></td></tr>
+            <tr> 
+            <td><label>interior</label></td>
+            <td><select name="" id="design">
+            <option>select</option> 
+            <option>yes</option>
+            <option>no</option>
+              </select></td></tr>
+        <tr>
+        <td><button onclick="check()" class="btn">Submit</button></td>
+       <td><button onclick="check()" class="btn2">Cancel</button></td>
+</tr>
+           </table>
+           <label for="" id="res"></label>
+     </fieldset>
+    
+    <script> 
+    function check()
+    {
+        var city=document.getElementById("cities").value;
+        var beds=document.getElementById("beds").value;
+        if(city=="chennai")
+        {
+          if(beds=="1b"){
+            rent=9000;
+          }
+          else{
+            rent=12000; 
+          }
+        }
+        else if(city=="hyd"){
+
+            if(beds=="1b"){
+            rent=12000;
+          }
+          else{
+            rent=15000;
+          }
+
+        }
+        var interior=document.getElementById("design").value;
+        if(design=="yes")
+        {
+            var total=rent+(rent*0.2)+(rent*0.12);
+
+        }
+        var total=rent+(rent*0.12);
+
+     document.getElementById("res").innerHTML="your payment="+total;
+     document.getElementById("res").style.color="green"; 
+    }
+           </script>
+    
+</body>
+</html>

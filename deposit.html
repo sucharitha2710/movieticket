@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+    .form{
+        margin-left:450px;
+    }
+    input{
+        padding:8px;
+        border-radius:5px;
+    }
+    .btn{
+        border-radius: 5px;
+    }
+    .btn2{
+        border-radius: 5px;
+    }
+   </style>
+</head>
+<body>
+    <h1 align="center">FIXED DEPOSIT CALCULATION</h1>
+    <fieldset style="width:300px" class="form">
+        <table>
+        <tr>
+       <td><label>UserName</label></td> 
+       <td><input type="text"></td> 
+        </tr>
+        <tr>
+       <td><label name="">DOB</label></td> 
+       <td><input type="number" id="dob"></td>
+       </tr>
+       <tr>
+        <td><label name="">Amount</label></td>
+        <td><input type="number"  id="amt"></td>
+       </tr>
+       <tr>
+        <td><label name="">Tenure</td>
+            <td><input type="number" id="time"></td>
+        </tr>
+            <tr>
+           <td> <button onclick="calc()" class="btn">Deposit</button></td>
+           <td><button onclick="calc()" class="btn2">Cancel</button></td></tr>
+           <tr>
+           <td><label id="res"></label></td>
+        </tr>
+       </tr>
+       </table>
+    </fieldset>
+    <script>
+ function calc(){
+     var amt=parseInt(document.getElementById("amt").value);
+     var time=document.getElementById("time").value;
+     var age=document.getElementById("dob").value;
+     var si,R;
+     
+     var ages=2023-age;
+     if(age<=45){
+
+          R=5;
+     }
+     else if(age>45 && age<60)
+     {
+       R=6;
+     }
+     else
+     {
+      R=7.5;
+     }
+    
+     si = parseInt((amt*time*R)/100);
+     console.log(si)
+     var amount = parseInt(si+amt);
+     console.log(amount)
+     document.getElementById("res").innerHTML="YOUR amount is"+amount;
+     document.getElementById("res").style.color="green"; 
+
+
+
+
+ }
+    
+
+
+    </script>
+    
+</body>
+</html>

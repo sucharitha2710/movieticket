@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            border-radius: 5px;;
+        }
+        .mi{
+            color:rgb(132, 0, 255);
+           
+        }
+        .hi{
+            background-color: rgb(244, 154, 52);
+        }
+        .btn{
+            color:rgb(230, 96, 43);
+            border-radius:5px;
+        }
+       .btn2{
+             color:rgb(0, 133, 0);
+             border-radius:5px;
+
+        }
+
+    </style>
+   
+</head>
+<body class="mi">
+         <div align="center">     
+  <fieldset style="width:250px" class="hi">
+        <h1 align="center">Movie booking</h1>
+        <label>USERNAME</label>
+       <input type="text" name="" id="user"><br><br>
+       <label>PASSWORD</label>
+        <input type="password" name="" id="pswd"><br><br>
+      
+        <label>MOVIE</label><br>
+        <select name="" id="favourate">
+            <option>select</option>
+            <option>RRR</option>
+            <option>Virupakhsha</option>
+            <option>liger</option>
+        </select>
+        <br><br>
+        <label>CLASS</label><br>
+        <select name="" id="suchi">
+            <option>select</option>
+            <option value="200">gold</option>
+            <option value="400">diamond</option>
+            <option value="600">platinum</option>
+            </select>
+            <br><br>
+            <label>TICKETS</label><br> 
+            <input type="number" name="" id="count">
+            <br><br>
+            <button onclick="check()" class="btn">Cancel</button>
+            <button onclick="check()" class="btn2">login</button>
+            <labe for="" id="res"></label>
+   </fieldset>
+   </div>
+        <script>
+           function check(){
+            var user=document.getElementById("user").value;
+            var password=document.getElementById("pswd").value;
+            var pwd=user.substring(0,3)+"123" 
+            console.log(pwd)
+            if(pwd==password)
+            {
+                 var price =parseInt(document.getElementById("suchi").value);
+                 var num =parseInt(document.getElementById("count").value);
+                 var total= price*num;
+                 var amount=total+total/10;
+
+                document.getElementById("res").innerHTML=" booking successful your pay="+amount;
+                document.getElementById("res").style.color="green";
+             }
+            else{
+                document.getElementById("res").innerHTML="booking failed total"+amount;
+                document.getElementById("res").style.color="red";
+            }
+         }
+        
+
+   </script>
+</body>
+</html>
